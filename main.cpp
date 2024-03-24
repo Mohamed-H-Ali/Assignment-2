@@ -38,7 +38,6 @@ int main(int argc, char *argv[])
     QObject::connect(time, SIGNAL(timeout()),rect,SLOT(createEnemy()));
     time->start(2000);
 
-
     // Bonus
     QGraphicsTextItem * textscore=new QGraphicsTextItem;
     textscore->setFont(QFont("times", 16));

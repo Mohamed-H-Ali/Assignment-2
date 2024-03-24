@@ -4,10 +4,10 @@
 #include <QList>
 #include <enemy.h>
 #include <player.h>
-Bullet::Bullet():QObject(), QGraphicsRectItem() {
+Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
 
         // *******  Setting the bullets' size ********
-    setRect(0,0,10,50);
+    setPixmap(QPixmap(":/resources/laser.png").scaled(10,30));
     score=0;
         // *******  Generating the Bullets automatically ********
     QTimer * timer = new QTimer();
@@ -20,7 +20,6 @@ Bullet::Bullet():QObject(), QGraphicsRectItem() {
                          // 2- Handle the collision of the bullets with enemies
 void Bullet:: move()
 {
-    int score=0;
         // *******  Getting the colliding items with the Bullet ********
         QList<QGraphicsItem *> colliding_items =collidingItems();
         for(int i=0, n=colliding_items.size(); i<n; ++i){
@@ -36,7 +35,7 @@ void Bullet:: move()
 
         // *******  Moving the bullets upward ********
         setPos(x(),y()-10);
-        if(pos().y()+rect().height()<0)
+        if(pos().y()+30<0)
         {
             scene()->removeItem(this);
             delete this;

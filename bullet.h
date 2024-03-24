@@ -2,8 +2,8 @@
 #define BULLET_H
 #include <QGraphicsItem>
 #include <QObject>
-
-class Bullet: public QObject, public QGraphicsRectItem
+#include <QGraphicsPixmapItem>
+class Bullet: public QObject, public QGraphicsPixmapItem
 {
 
     Q_OBJECT
