@@ -7,13 +7,13 @@
 #include <gameover.h>
 Enemy::Enemy() {
         // *******  Setting the size of the enemy ********
-    setRect(0,0,100,100);
+    setPixmap(QPixmap(":/resources/chicken.jfif").scaled(50,50));
 
-        // *******  Setting the postion of the enemy within the view dimensions ********
+    // *******  Setting the postion of the enemy within the view dimensions ********
     int random_number = rand() % 701;
     setPos(random_number,0);
 
-        // *******  Moving the enemies downwards automatically every 50 milli second ********
+    // *******  Moving the enemies downwards automatically every 50 milli second ********
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
     timer->start(50);
@@ -23,7 +23,7 @@ Enemy::Enemy() {
 void Enemy:: move()
 {
     setPos(x(),y()+5);
-        if(y()+rect().height()>800)
+    if(y()+50>800)
     {
         scene()->removeItem(this);
             delete this;

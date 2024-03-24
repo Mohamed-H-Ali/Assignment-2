@@ -5,7 +5,7 @@
 #include <QDebug>
 #include "enemy.h"
 Player::Player() {
-    score=0;
+
 }
 
 void Player::keyPressEvent(QKeyEvent *event)
