@@ -13,13 +13,15 @@ SOURCES += \
     enemy.cpp \
     gameover.cpp \
     main.cpp \
-    player.cpp
+    player.cpp \
+    res.cpp
 
 HEADERS += \
     bullet.h \
     enemy.h \
     gameover.h \
-    player.h
+    player.h \
+    res.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,3 +30,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 FORMS += \
     gameover.ui
+
+RESOURCES += \
+    reso.qrc

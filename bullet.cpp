@@ -7,7 +7,7 @@
 Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
 
         // *******  Setting the bullets' size ********
-    setPixmap(QPixmap(":/resources/laser.png").scaled(10,30));
+    setPixmap(QPixmap(":/images/Resources/laser.png").scaled(10,30));
     score=0;
         // *******  Generating the Bullets automatically ********
     QTimer * timer = new QTimer();

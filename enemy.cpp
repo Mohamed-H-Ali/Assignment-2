@@ -7,7 +7,7 @@
 #include <gameover.h>
 Enemy::Enemy() {
         // *******  Setting the size of the enemy ********
-    setPixmap(QPixmap(":/resources/chicken.jfif").scaled(50,50));
+    setPixmap(QPixmap(":/images/Resources/chicken.jfif").scaled(50,50));
 
     // *******  Setting the postion of the enemy within the view dimensions ********
     int random_number = rand() % 701;

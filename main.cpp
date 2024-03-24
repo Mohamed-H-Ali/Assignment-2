@@ -21,8 +21,9 @@ int main(int argc, char *argv[])
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     // *******  Create the Player ********
     Player *rect=new Player();
-    rect->setPixmap(QPixmap(":/resources/ship.png"));
+    rect->setPixmap(QPixmap(":/images/Resources/ship.png").scaled(40,40));
     scene->addItem(rect);
+
     // *******  Setting the foucs to the Player ********
     rect->setFlag(QGraphicsItem::ItemIsFocusable);
     rect->setFocus();

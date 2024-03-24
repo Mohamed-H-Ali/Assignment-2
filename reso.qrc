@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>Resources/chicken.jfif</file>
+        <file>Resources/laser.png</file>
+        <file>Resources/ship.png</file>
+    </qresource>
+</RCC>

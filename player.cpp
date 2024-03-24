@@ -26,7 +26,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     else if(event->key()== Qt::Key_Space)
     {
         Bullet * bullet = new Bullet();
-        bullet->setPos(x()+30,y());
+        bullet->setPos(x()+15,y());
         scene()->addItem(bullet);
 
     }
