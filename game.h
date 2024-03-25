@@ -5,7 +5,7 @@
 #include <QGraphicsScene>
 #include "Player.h"
 #include "Score.h"
-#include "Health.h"
+#include "heal.h"
 class Game :public QGraphicsView
 {
 public:
@@ -14,7 +14,7 @@ public:
     QGraphicsScene *scene;
     Player *player;
     Score *score;
-    Health * health;
+    heal * chicken;
 };
 
 #endif // GAME_H

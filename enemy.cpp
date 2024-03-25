@@ -1,10 +1,13 @@
 #include "enemy.h"
+#include "game.h"
 #include <QGraphicsScene>
 #include <stdlib.h> // rand() -> to generate really large integer
 #include <QTimer>
 #include <QDebug>
 #include <player.h>
 #include <gameover.h>
+
+extern Game * game;
 Enemy::Enemy() {
         // *******  Setting the size of the enemy ********
     setPixmap(QPixmap(":/images/Resources/chicken.jfif").scaled(50,50));
@@ -29,15 +32,17 @@ void Enemy:: move()
             delete this;
     }
         QList<QGraphicsItem *> collidingitems =collidingItems();
-        for(int i=0, n=collidingitems.size(); i<n; ++i){
+    for(int i=0, n=collidingitems.size(); i<n && game->chicken->gethealth() >= 0; ++i){
             if(typeid(*(collidingitems[i]))==typeid(Player)){
-                scene()->removeItem(collidingitems[i]);
                 scene()->removeItem(this);
-                delete collidingitems[i];
                 delete this;
-                gameover *page = new gameover;
-                page->show();
-                return;
+                game->chicken->decrease_health();
+
             }
+        }
+    if(game->chicken->gethealth() < 0){
+            gameover *page = new gameover;
+            page->show();
+            return ;
         }
 }

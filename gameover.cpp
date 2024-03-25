@@ -1,4 +1,4 @@
-#include "gameover.h"
+ #include "gameover.h"
 #include "ui_gameover.h"
 #include "main.cpp"
 gameover::gameover(QWidget *parent)
@@ -17,4 +17,5 @@ void gameover::on_yesbutton_clicked()
 {
 
 }
+
 

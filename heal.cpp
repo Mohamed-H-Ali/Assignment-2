@@ -1,6 +1,6 @@
-#include "health.h"
+#include "heal.h"
 #include <QFont>
-Health::Health(QGraphicsItem * parent) :QGraphicsTextItem(parent)
+heal::heal(QGraphicsItem * parent) :QGraphicsTextItem(parent)
 {
     health = 3;
 
@@ -10,13 +10,15 @@ Health::Health(QGraphicsItem * parent) :QGraphicsTextItem(parent)
 
 }
 
-void Health::decrease_health()
+
+void heal::decrease_health()
 {
     health--;
     setPlainText(QString("Health: ") + QString::number(health));
 }
 
-int Health::gethealth()
+int heal::gethealth()
 {
     return health;
 }
+

@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "Enemy.h"
+#include "heal.h"
 #include <QTimer>
 #include <QGraphicsTextItem>
 #include <QGraphicsItem>
@@ -24,9 +25,9 @@ Game::Game(QWidget *parent) {
     //Create the score/health
     score = new Score();
     scene->addItem(score);
-    health = new Health();
-    health->setPos();
-
+    chicken = new heal;
+    chicken->setPos(chicken->x(), chicken->y()+25);
+    scene->addItem(chicken);
     // *******  Setting the foucs to the Player ********
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();

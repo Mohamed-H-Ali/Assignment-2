@@ -13,7 +13,7 @@ SOURCES += \
     enemy.cpp \
     game.cpp \
     gameover.cpp \
-    health.cpp \
+    heal.cpp \
     main.cpp \
     player.cpp \
     res.cpp \
@@ -24,7 +24,7 @@ HEADERS += \
     enemy.h \
     game.h \
     gameover.h \
-    health.h \
+    heal.h \
     player.h \
     res.h \
     score.h
