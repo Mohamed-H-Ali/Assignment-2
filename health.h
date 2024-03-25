@@ -1,10 +1,14 @@
 #ifndef HEALTH_H
 #define HEALTH_H
-
-class Health
+#include <QGraphicsTextItem>
+class Health:public QGraphicsTextItem
 {
 public:
-    Health();
+    Health(QGraphicsItem * parent=0);
+    void decrease_health();
+    int gethealth();
+private:
+    int health;
 };
 
-#endif // HEALTH_H
+#endif // SCORE_H

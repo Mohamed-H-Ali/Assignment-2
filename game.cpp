@@ -1,8 +1,11 @@
-#include "game.h"
+#include "Game.h"
+#include "Enemy.h"
 #include <QTimer>
 #include <QGraphicsTextItem>
+#include <QGraphicsItem>
 #include <QFont>
-#include "enemy.h"
+
+
 Game::Game(QWidget *parent) {
     // ******* Create the Scene ********
     QGraphicsScene *scene= new QGraphicsScene;
@@ -18,9 +21,11 @@ Game::Game(QWidget *parent) {
     player->setPixmap(QPixmap(":/images/Resources/ship.png").scaled(40,40));
     scene->addItem(player);
 
-    //Create the score
+    //Create the score/health
     score = new Score();
     scene->addItem(score);
+    health = new Health();
+    health->setPos();
 
     // *******  Setting the foucs to the Player ********
     player->setFlag(QGraphicsItem::ItemIsFocusable);

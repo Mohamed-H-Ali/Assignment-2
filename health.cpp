@@ -1,7 +1,5 @@
 #include "health.h"
 #include <QFont>
-
-
 Health::Health(QGraphicsItem * parent) :QGraphicsTextItem(parent)
 {
     health = 3;
@@ -12,7 +10,7 @@ Health::Health(QGraphicsItem * parent) :QGraphicsTextItem(parent)
 
 }
 
-void Health::decrease_score()
+void Health::decrease_health()
 {
     health--;
     setPlainText(QString("Health: ") + QString::number(health));
