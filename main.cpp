@@ -14,7 +14,8 @@ int main(int argc, char *argv[])
 
     game = new Game();
     game->show();
-
-
+    if(game->chicken->gethealth() < 0){
+        game->hide();
+    }
     return a.exec();
 }

@@ -12,7 +12,6 @@ SOURCES += \
     bullet.cpp \
     enemy.cpp \
     game.cpp \
-    gameover.cpp \
     heal.cpp \
     main.cpp \
     player.cpp \
@@ -23,7 +22,6 @@ HEADERS += \
     bullet.h \
     enemy.h \
     game.h \
-    gameover.h \
     heal.h \
     player.h \
     res.h \
@@ -34,8 +32,7 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-FORMS += \
-    gameover.ui
+FORMS +=
 
 RESOURCES += \
     reso.qrc

@@ -4,6 +4,9 @@
 #include <QGraphicsScene>
 #include <QDebug>
 #include "enemy.h"
+#include "game.h"
+#include "QMessageBox"
+extern Game * game;
 Player::Player() {
 
 }
@@ -35,7 +38,13 @@ void Player::keyPressEvent(QKeyEvent *event)
 }
  // CreateEnemy function used to create the eneimes
 void Player::createEnemy()
-{   Enemy* enemy = new Enemy();
+{
+    if(game->chicken->gethealth() < 0){
+        game->hide();
+        QMessageBox::about(game,"Gameover.","Your score is: "+ QString::number(game->score->getscore()));
+        exit(1);
+    }
+    Enemy* enemy = new Enemy();
     scene()->addItem(enemy);
 
 }

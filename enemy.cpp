@@ -5,7 +5,6 @@
 #include <QTimer>
 #include <QDebug>
 #include <player.h>
-#include <gameover.h>
 
 extern Game * game;
 Enemy::Enemy() {
@@ -31,18 +30,12 @@ void Enemy:: move()
         scene()->removeItem(this);
             delete this;
     }
-        QList<QGraphicsItem *> collidingitems =collidingItems();
+    QList<QGraphicsItem*> collidingitems =collidingItems();
     for(int i=0, n=collidingitems.size(); i<n && game->chicken->gethealth() >= 0; ++i){
             if(typeid(*(collidingitems[i]))==typeid(Player)){
                 scene()->removeItem(this);
                 delete this;
                 game->chicken->decrease_health();
-
             }
-        }
-    if(game->chicken->gethealth() < 0){
-            gameover *page = new gameover;
-            page->show();
-            return ;
         }
 }
