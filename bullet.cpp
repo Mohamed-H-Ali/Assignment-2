@@ -4,11 +4,14 @@
 #include <QList>
 #include <enemy.h>
 #include <player.h>
+#include <score.h>
+#include <game.h>
+
+extern Game * game;
 Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
 
         // *******  Setting the bullets' size ********
     setPixmap(QPixmap(":/images/Resources/laser.png").scaled(10,30));
-    score=0;
         // *******  Generating the Bullets automatically ********
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
@@ -24,11 +27,11 @@ void Bullet:: move()
         QList<QGraphicsItem *> colliding_items =collidingItems();
         for(int i=0, n=colliding_items.size(); i<n; ++i){
             if(typeid(*(colliding_items[i]))==typeid(Enemy)){
+                game->score->increasescore();
                 scene()->removeItem(colliding_items[i]);
                 scene()->removeItem(this);
                 delete colliding_items[i];
                 delete this;
-                score++;
                 return;
             }
         }

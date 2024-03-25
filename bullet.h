@@ -9,7 +9,6 @@ class Bullet: public QObject, public QGraphicsPixmapItem
     Q_OBJECT
 public:
     Bullet();
-    int score;
 public slots:
     void move();
 };
