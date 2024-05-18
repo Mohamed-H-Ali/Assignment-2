@@ -1,0 +1,13 @@
+release/bullet.o
+release/enemy.o
+release/game.o
+release/heal.o
+release/main.o
+release/player.o
+release/res.o
+release/score.o
+release/qrc_reso.o
+release/moc_bullet.o
+release/moc_enemy.o
+release/moc_player.o
+release/moc_res.o

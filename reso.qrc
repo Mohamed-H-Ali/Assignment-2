@@ -4,4 +4,8 @@
         <file>Resources/laser.png</file>
         <file>Resources/ship.png</file>
     </qresource>
+    <qresource prefix="/sound">
+        <file>Resources/shotgun-firing-4-6746.mp3</file>
+        <file>Resources/videogame-death-sound-43894.mp3</file>
+    </qresource>
 </RCC>

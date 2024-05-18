@@ -8,6 +8,11 @@
 #include "QMessageBox"
 extern Game * game;
 Player::Player() {
+    QAudioOutput *bullet = new QAudioOutput;
+    bullet->setVolume(100);
+    bullett = new QMediaPlayer;
+    bullett->setAudioOutput(bullet);
+    bullett->setSource(QUrl("qrc:/sound/Resources/shotgun-firing-4-6746.mp3"));
 
 }
 
@@ -30,6 +35,7 @@ void Player::keyPressEvent(QKeyEvent *event)
     {
         Bullet * bullet = new Bullet();
         bullet->setPos(x()+15,y());
+        bullett->play();
         scene()->addItem(bullet);
 
     }

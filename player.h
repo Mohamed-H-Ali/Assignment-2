@@ -4,6 +4,9 @@
 #include <QGraphicsRectItem>
 #include <QObject>
 #include <QGraphicsPixmapItem>
+#include <QAudioOutput>
+#include <QMediaPlayer>
+
 class Player: public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
@@ -16,6 +19,11 @@ public:
 public slots:
     void keyPressEvent(QKeyEvent * event);
     void createEnemy();
+
+private:
+    QAudioOutput *bullet;
+    QMediaPlayer *bullett;
+
 };
 
 #endif // PLAYER_H

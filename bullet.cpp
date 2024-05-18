@@ -16,6 +16,12 @@ Bullet::Bullet():QObject(), QGraphicsPixmapItem() {
     QTimer * timer = new QTimer();
     connect(timer, SIGNAL(timeout()),this,SLOT (move()));
     timer->start(50);
+    QAudioOutput *enemy = new QAudioOutput;
+    enemy->setVolume(100);
+    chicken = new QMediaPlayer;
+    chicken->setAudioOutput(enemy);
+    chicken->setSource(QUrl("qrc:/sound/Resources/videogame-death-sound-43894.mp3"));
+
 
 }
 
@@ -30,6 +36,7 @@ void Bullet:: move()
                 game->score->increasescore();
                 scene()->removeItem(colliding_items[i]);
                 scene()->removeItem(this);
+                chicken->play();
                 delete colliding_items[i];
                 delete this;
                 return;
